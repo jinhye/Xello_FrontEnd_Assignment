@@ -1,0 +1,14 @@
+@mixin btn-theme 
+   $button-color: #780992
+
+   background-color: lighten($button-color, 60%)
+
+   &:hover 
+      background-color: lighten($button-color, 40%)
+      box-shadow: lighten($button-color, 10%)
+   
+   &:active 
+      box-shadow: inset 0 0 1.094em #472566, inset 0 .063em #390668, inset 0 -0.188em #682CA0, 0 .063em rgba(255,255,255,.4)
+   
+button
+    @include btn-theme

@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+
+$full: 100
+$half: 50
+$zero: 0
+
+$example-text: text-align
+$tooltip-background: black
+
+.tooltip-example
+  text: $example-text
+  padding: $zero $half
+
+.tooltip-example [tooltip]
+  display: inline-block
+  margin: $half+px $full/5+px
+  width: 180px
+  height: $half+px
+  border: 1px solid gray
+  border-radius: $half/10+px
+  line-height: $half+px
+  text-align: center
+
+.ng-tooltip 
+  position: absolute
+  max-width: 160px
+  font-size: 14px
+  text-align: center
+  color: #f8f8f2
+  padding: 3px 8px
+  background: lighten($tooltip-background, 25%)
+  border-radius: 4px
+  z-index: 1000
+  opacity: 0
+
+.ng-tooltip:after 
+  content: ""
+  position: absolute
+  border-style: solid
+
+.ng-tooltip-top:after 
+  top: $full + %
+  left: $half + %
+  margin-left: -5px
+  border-width: 5px
+  border-color: black transparent transparent transparent
+
+.ng-tooltip-bottom:after 
+  bottom: $full + %
+  left: $half + %
+  margin-left: -5px
+  border-width: 5px
+  border-color: transparent transparent black transparent
+
+.ng-tooltip-left:after 
+  top: $half + %
+  left: $full + %
+  margin-top: -5px
+  border-width: 5px
+  border-color: transparent transparent transparent black
+
+.ng-tooltip-right:after 
+  top: $half + %
+  right: $full + %
+  margin-top: -5px
+  border-width: 5px
+  border-color: transparent black transparent transparent
+
+.ng-tooltip-show 
+  opacity: 1
